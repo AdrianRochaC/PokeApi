@@ -4,11 +4,12 @@ import './style.css'
 
 function Usuario() {
 
-  return (
+    return (
     <>
-      <h1>Usuario</h1>
+      <h1>Usuarios</h1>
     </>
   )
 }
+
 
 export default Usuario
