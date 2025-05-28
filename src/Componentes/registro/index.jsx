@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { supabase } from '../../supabase';
 import { useNavigate } from 'react-router-dom';
+import './style.css'
 function Registro() {
     const [formulario, setFormulario] = useState({
         nombre: '',
@@ -47,54 +48,61 @@ function Registro() {
         }
     };
     return (
-        <section>
-            <h2>Registro</h2>
-            <form onSubmit={handleRegistro}>
-                <input
-                    type="text"
-                    name="nombre"
-                    placeholder="Nombre"
-                    value={formulario.nombre}
-                    onChange={handleChange}
-                    required
-                />
-                <input
-                    type="email"
-                    name="correo"
-                    placeholder="Correo"
-                    value={formulario.correo}
-                    onChange={handleChange}
-                    required
-                />
-                <input
-                    type="password"
-                    name="password"
-                    placeholder="Contraseña"
-                    value={formulario.password}
-                    onChange={handleChange}
-                    required
-                />
-                <input
-                    type="date"
-                    name="fechaNacimiento"
-                    value={formulario.fechaNacimiento}
-                    onChange={handleChange}
-                    required
-                />
-                <input
-                    type="text"
-                    name="telefono"
-                    placeholder="Teléfono"
-                    value={formulario.telefono}
-                    onChange={handleChange}
-                    required
-                />
-                <button type="submit">Registrarse</button>
-            </form>
-            {error && <p style={{ color: "red" }}>{error}</p>}
-            <h2>Ya tengo cuenta y quiero loguearme</h2>
-            <button onClick={() => navigate(`/login`)}>Login</button>
-        </section>
+        <div className="registro-container">
+            <section>
+                <h2>Registro</h2>
+                <form onSubmit={handleRegistro}>
+                    <input
+                        type="text"
+                        name="nombre"
+                        placeholder="Nombre"
+                        value={formulario.nombre}
+                        onChange={handleChange}
+                        required
+                    />
+                    <input
+                        type="email"
+                        name="correo"
+                        placeholder="Correo"
+                        value={formulario.correo}
+                        onChange={handleChange}
+                        required
+                    />
+                    <input
+                        type="password"
+                        name="password"
+                        placeholder="Contraseña"
+                        value={formulario.password}
+                        onChange={handleChange}
+                        required
+                    />
+                    <input
+                        type="date"
+                        name="fechaNacimiento"
+                        value={formulario.fechaNacimiento}
+                        onChange={handleChange}
+                        required
+                    />
+                    <input
+                        type="text"
+                        name="telefono"
+                        placeholder="Teléfono"
+                        value={formulario.telefono}
+                        onChange={handleChange}
+                        required
+                    />
+                    <button type="submit">Registrarse</button>
+                </form>
+                {error && <p style={{ color: "red" }}>{error}</p>}
+                <h2>Ya tengo cuenta y quiero loguearme</h2>
+                <button
+                    className="login-button"
+                    onClick={() => navigate(`/login`)}
+                >
+                    Login
+                </button>
+            </section>
+        </div>
     );
 }
 export default Registro;

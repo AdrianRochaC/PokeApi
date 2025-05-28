@@ -1,0 +1,87 @@
+/* style.css */
+
+body {
+  background-color: #0f1115;
+  color: #ffffff;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Buscador */
+.c-buscador {
+  display: block;
+  margin: 30px auto 20px auto;
+  padding: 12px 20px;
+  width: 90%;
+  max-width: 400px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #1a1d24;
+  color: white;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.25);
+  transition: box-shadow 0.3s;
+}
+
+.c-buscador:focus {
+  outline: none;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.45);
+}
+
+/* Contenedor de lista */
+.c-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Cada tarjeta de Pokémon */
+.c-lista-pokemon {
+  background-color: #1a1d24;
+  border: 2px solid #2a2e38;
+  border-radius: 16px;
+  padding: 12px;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.3s;
+  box-shadow: 0 0 12px rgba(0, 128, 255, 0.1);
+}
+
+.c-lista-pokemon:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 18px rgba(0, 128, 255, 0.4);
+}
+
+/* N° y nombre del Pokémon */
+.c-lista-pokemon p {
+  margin: 5px 0;
+  font-weight: 500;
+}
+
+/* Imagen del Pokémon */
+.c-lista-pokemon img {
+  width: auto;
+  height: 80px;
+  margin: 8px 0;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.2));
+}
+
+/* Responsive para móviles */
+@media (max-width: 600px) {
+  .c-buscador {
+    width: 90%;
+    font-size: 14px;
+  }
+
+  .c-lista {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+
+  .c-lista-pokemon img {
+    height: 60px;
+  }
+}

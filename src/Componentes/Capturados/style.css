@@ -1,0 +1,52 @@
+/* Estilo general para la sección capturados */
+.c-aleatorio {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 16px;
+  padding: 20px;
+  background-color: #0f172a; /* Azul oscuro */
+  border-radius: 12px;
+  margin-top: 20px;
+  box-shadow: 0 0 12px rgba(0, 187, 255, 0.15);
+}
+
+/* Estilo para cada Pokémon individual */
+.c-unpoke {
+  background-color: #1e293b;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  transition: 0.3s ease;
+  color: #94a3b8;
+  font-size: 14px;
+  cursor: default;
+}
+
+/* Cuando está capturado */
+.c-mios-pokemon {
+  border-color: #38bdf8;
+  cursor: pointer;
+  color: #f8fafc;
+  box-shadow: 0 0 10px #38bdf8;
+}
+
+.c-mios-pokemon:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 16px #38bdf8;
+}
+
+/* Imagen de los pokémon */
+.c-unpoke img {
+  margin-bottom: 4px;
+}
+
+/* Contador arriba */
+.c-aleatorio + span,
+.capturados-contador {
+  display: block;
+  margin: 10px 0;
+  color: #94a3b8;
+  font-weight: bold;
+  text-align: center;
+}

@@ -1,7 +1,6 @@
 import { useState, useEffect, useContext } from 'react'
 import { useParams } from "react-router-dom";
 import { AppContext } from '../../contexto/contexto';
-
 import './style.css'
 
 function Pokemon() {
@@ -29,7 +28,7 @@ function Pokemon() {
 
   if (!datapoke || !datapoke.id) return <p>Cargando...</p>;
   return (
-    <div className={datapoke.types[0].type.name}>
+    <div className={`pokemon ${datapoke.types[0].type.name}`}>
       <img 
         src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${datapoke.id}.png`} 
         alt={datapoke.name} 

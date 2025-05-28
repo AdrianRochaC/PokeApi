@@ -1,0 +1,88 @@
+.registro-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 24px 32px;
+  background-color: #1e293b;
+  color: #f1f5f9;
+  border-radius: 12px;
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.4);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+.registro-container h2 {
+  margin-bottom: 24px;
+  color: #38bdf8;
+  font-weight: 700;
+}
+
+.registro-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.registro-container input[type="text"],
+.registro-container input[type="email"],
+.registro-container input[type="password"],
+.registro-container input[type="date"] {
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1.5px solid #334155;
+  background-color: #0f172a;
+  color: #f1f5f9;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.registro-container input[type="text"]:focus,
+.registro-container input[type="email"]:focus,
+.registro-container input[type="password"]:focus,
+.registro-container input[type="date"]:focus {
+  outline: none;
+  border-color: #38bdf8;
+  box-shadow: 0 0 8px #38bdf8;
+}
+
+.registro-container button[type="submit"],
+.registro-container button {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 14px 0;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 12px;
+}
+
+.registro-container button[type="submit"]:hover,
+.registro-container button:hover {
+  background-color: #3b82f6;
+}
+
+.registro-container p {
+  margin-top: 16px;
+  color: #f87171; /* red-ish for errors */
+  font-weight: 600;
+}
+
+.registro-container .login-button {
+  padding: 16px 0;
+  font-size: 18px;
+  border-radius: 12px;
+  font-weight: 700;
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 12px;
+}
+
+.registro-container .login-button:hover {
+  background-color: #0056b3;
+}
