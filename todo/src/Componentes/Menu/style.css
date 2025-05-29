@@ -1,0 +1,52 @@
+/* Contenedor del menú */
+.c-menu {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background-color: #1a1d24;
+  padding: 16px;
+  border-bottom: 2px solid #2f3542;
+  box-shadow: 0 2px 10px rgba(0, 140, 255, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Enlaces del menú */
+.c-menu a {
+  color: #d6e2f0;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 15px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background-color 0.3s, box-shadow 0.3s, color 0.2s;
+}
+
+/* Hover estilo glow */
+.c-menu a:hover {
+  background-color: #2a2f39;
+  box-shadow: 0 0 10px rgba(0, 140, 255, 0.3);
+  color: #ffffff;
+}
+
+/* Enlace activo opcional si usas NavLink en lugar de Link */
+.c-menu a.active {
+  background-color: #007bff;
+  color: #ffffff;
+  box-shadow: 0 0 12px rgba(0, 140, 255, 0.6);
+}
+
+/* Responsive para móviles */
+/* Responsive para móviles */
+@media (max-width: 600px) {
+  .c-menu {
+    gap: 12px;
+    padding: 12px;
+  }
+  .c-menu a {
+    font-size: 13px;
+    padding: 6px 8px;
+  }
+}
+

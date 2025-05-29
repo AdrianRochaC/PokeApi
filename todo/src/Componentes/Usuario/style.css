@@ -1,0 +1,144 @@
+.usuario-container {
+  max-width: 480px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #1e293b;
+  color: #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.3);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.usuario-container h2,
+.usuario-container h3 {
+  color: #38bdf8;
+  margin-bottom: 12px;
+}
+
+.usuario-container label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.usuario-container input[type="text"],
+.usuario-container input[type="date"],
+.usuario-container input {
+  width: 100%;
+  padding: 8px 10px;
+  margin-top: 4px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1.5px solid #334155;
+  background-color: #0f172a;
+  color: #e2e8f0;
+  font-size: 15px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.usuario-container input[type="text"]:focus,
+.usuario-container input[type="date"]:focus,
+.usuario-container input:focus {
+  outline: none;
+  border-color: #38bdf8;
+  box-shadow: 0 0 8px #38bdf8;
+}
+
+.usuario-container button {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.usuario-container button:hover {
+  background-color: #3b82f6;
+}
+
+.usuario-container ul {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.usuario-container ul li {
+  background-color: #334155;
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+  max-width: 160px;
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.2);
+}
+
+.usuario-container ul img {
+  border-radius: 8px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.usuario-container hr {
+  border: none;
+  border-top: 1px solid #334155;
+  margin: 24px 0;
+}
+@media (max-width: 600px) {
+  .usuario-container {
+    max-width: 90%;
+    padding: 16px 20px;
+    margin: 15px auto;
+  }
+
+  .usuario-container h2,
+  .usuario-container h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .usuario-container label {
+    font-size: 14px;
+  }
+
+  .usuario-container input[type="text"],
+  .usuario-container input[type="date"],
+  .usuario-container input {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+
+  .usuario-container button {
+    padding: 10px 14px;
+    font-size: 15px;
+  }
+
+  .usuario-container ul {
+    gap: 12px;
+  }
+
+  .usuario-container ul li {
+    max-width: 120px;
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .usuario-container ul img {
+    border-radius: 6px;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 6px;
+  }
+
+  .usuario-container hr {
+    margin: 18px 0;
+  }
+}
