@@ -43,3 +43,26 @@
   transform: scale(1.2);
   filter: drop-shadow(0 0 6px #00bfff);
 }
+
+@media (max-width: 600px) {
+  .pokemon {
+    max-width: 90%;
+    margin: 20px auto;
+    padding: 15px;
+  }
+
+  .pokemon img {
+    width: 120px;
+    margin-bottom: 10px;
+  }
+
+  .pokemon p {
+    font-size: 14px;
+  }
+
+  .pokemon button {
+    font-size: 20px;
+    margin-top: 8px;
+  }
+}
+

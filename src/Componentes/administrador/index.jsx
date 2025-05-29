@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../../supabase";
 import { useNavigate } from "react-router-dom";
+import "./style.css"
 
 function Administrador() {
     const [usuarios, setUsuarios] = useState([]);
@@ -12,7 +13,9 @@ function Administrador() {
     // Verificar si el usuario está logueado y es admin
     useEffect(() => {
         const verificarAcceso = async () => {
-            const { data: { user }, error: userError } = await supabase.auth.getUser();
+            const { data: { user }, error: userError } = await
+
+                supabase.auth.getUser();
 
             if (userError || !user) {
                 navigate("/");
@@ -42,9 +45,13 @@ function Administrador() {
 
         const obtenerDatos = async () => {
             try {
-                const { data: usuariosData, error: usuariosError } = await supabase
-                    .from("usuario")
-                    .select("id, nombre, correo, roll, telefono");
+
+                const { data: usuariosData, error: usuariosError } = await
+
+                    supabase
+
+                        .from("usuario")
+                        .select("id, nombre, correo, roll, telefono");
 
                 const { data: fotosData, error: fotosError } = await supabase
                     .from("multimedia")
@@ -57,7 +64,9 @@ function Administrador() {
 
                 const usuariosConFotos = usuariosData.map((usuario) => ({
                     ...usuario,
-                    fotos: fotosData.filter((foto) => foto.usuarioid === usuario.id),
+                    fotos: fotosData.filter((foto) => foto.usuarioid ===
+
+                        usuario.id),
                 }));
 
                 setUsuarios(usuariosConFotos);
@@ -88,7 +97,11 @@ function Administrador() {
                 setUsuarios((prev) =>
                     prev.map((usuario) =>
                         usuario.id === id
-                            ? { ...usuario, nombre: nuevoNombre, correo: nuevoCorreo, telefono: nuevoTelefono }
+                            ? {
+                                ...usuario, nombre: nuevoNombre, correo:
+
+                                    nuevoCorreo, telefono: nuevoTelefono
+                            }
                             : usuario
                     )
                 );
@@ -100,6 +113,7 @@ function Administrador() {
 
     const eliminarImagen = async (imagenId) => {
         try {
+
             const { error } = await supabase
                 .from("multimedia")
                 .delete()
@@ -108,11 +122,17 @@ function Administrador() {
             if (error) {
                 console.error("Error al eliminar la imagen:", error);
             } else {
-                setFotos((prevFotos) => prevFotos.filter((foto) => foto.id !== imagenId));
+                setFotos((prevFotos) => prevFotos.filter((foto) => foto.id !==
+
+                    imagenId));
+
                 setUsuarios((prevUsuarios) =>
                     prevUsuarios.map((usuario) => ({
                         ...usuario,
-                        fotos: usuario.fotos.filter((foto) => foto.id !== imagenId),
+                        fotos: usuario.fotos.filter((foto) => foto.id !==
+
+                            imagenId),
+
                     }))
                 );
             }
@@ -125,14 +145,15 @@ function Administrador() {
         const newValue = e.target.value;
         setUsuarios((prev) =>
             prev.map((usuario) =>
-                usuario.id === usuarioId ? { ...usuario, [campo]: newValue } : usuario
+                usuario.id === usuarioId ? { ...usuario, [campo]: newValue } :
+
+                    usuario
             )
         );
-    };
 
+    };
     if (!accesoPermitido) return null;
     if (loading) return <div>Cargando...</div>;
-
     return (
         <div className="admin-container">
             <h1>Administrador - Gestión de Usuarios y Multimedia</h1>
@@ -150,36 +171,41 @@ function Administrador() {
                 <tbody>
                     {usuarios.map((usuario) => (
                         <tr key={usuario.id}>
-                            <td>{usuario.id}</td>
-                            <td>
+                            <td data-label="ID Usuario">{usuario.id}</td>
+                            <td data-label="Nombre">
                                 <input
                                     type="text"
                                     value={usuario.nombre}
                                     onChange={(e) => handleChange(e, usuario.id, "nombre")}
                                 />
                             </td>
-                            <td>{usuario.correo}</td>
-                            <td>
+                            <td data-label="Correo">{usuario.correo}</td>
+                            <td data-label="Teléfono">
                                 <input
                                     type="tel"
                                     value={usuario.telefono}
                                     onChange={(e) => handleChange(e, usuario.id, "telefono")}
                                 />
                             </td>
-                            <td>
+                            <td data-label="Fotos">
                                 {usuario.fotos.map((foto) => (
-                                    <div key={foto.id} style={{ display: "inline-block", marginRight: "10px" }}>
-                                        <img
-                                            src={foto.url}
-                                            alt={`Foto de ${usuario.nombre}`}
-                                            style={{ width: "100px", height: "auto", marginBottom: "5px" }}
-                                        />
+                                    <div key={foto.id}>
+                                        <img src={foto.url} alt={`Foto de ${usuario.nombre}`} />
                                         <button onClick={() => eliminarImagen(foto.id)}>Eliminar</button>
                                     </div>
                                 ))}
                             </td>
-                            <td>
-                                <button onClick={() => editarUsuario(usuario.id, usuario.nombre, usuario.correo, usuario.telefono)}>
+                            <td data-label="Acciones">
+                                <button
+                                    onClick={() =>
+                                        editarUsuario(
+                                            usuario.id,
+                                            usuario.nombre,
+                                            usuario.correo,
+                                            usuario.telefono
+                                        )
+                                    }
+                                >
                                     Guardar Cambios
                                 </button>
                             </td>
@@ -190,5 +216,4 @@ function Administrador() {
         </div>
     );
 }
-
 export default Administrador;

@@ -36,3 +36,17 @@
   color: #ffffff;
   box-shadow: 0 0 12px rgba(0, 140, 255, 0.6);
 }
+
+/* Responsive para móviles */
+/* Responsive para móviles */
+@media (max-width: 600px) {
+  .c-menu {
+    gap: 12px;
+    padding: 12px;
+  }
+  .c-menu a {
+    font-size: 13px;
+    padding: 6px 8px;
+  }
+}
+

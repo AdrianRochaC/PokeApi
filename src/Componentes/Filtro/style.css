@@ -35,3 +35,24 @@
   color: #fff;
   box-shadow: 0 0 12px rgba(0, 140, 255, 0.6);
 }
+
+/* --- Responsive: escala todo en pantallas pequeñas --- */
+@media (max-width: 767px) {
+  .c-filtro {
+    gap: 6px;
+    padding: 6px 12px;
+    margin-bottom: 16px;
+  }
+  .c-filtro button {
+    font-size: 11px;
+    padding: 6px 10px;
+    border-radius: 10px;
+  }
+  .c-filtro button:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 8px rgba(0, 140, 255, 0.3);
+  }
+  .c-filtro button.active {
+    box-shadow: 0 0 10px rgba(0, 140, 255, 0.5);
+  }
+}

@@ -39,6 +39,9 @@
 /* Imagen de los pokémon */
 .c-unpoke img {
   margin-bottom: 4px;
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
 }
 
 /* Contador arriba */
@@ -49,4 +52,34 @@
   color: #94a3b8;
   font-weight: bold;
   text-align: center;
+}
+
+/* --- Responsive: escala todo en pantallas pequeñas --- */
+@media (max-width: 767px) {
+  .c-aleatorio {
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    gap: 12px;
+    padding: 12px;
+  }
+  .c-unpoke {
+    font-size: 12px;
+    padding: 6px;
+    border-radius: 8px;
+  }
+  .c-unpoke img {
+    width: 48px;
+    height: 48px;
+  }
+  .c-mios-pokemon {
+    box-shadow: 0 0 6px #38bdf8;
+  }
+  .c-mios-pokemon:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 10px #38bdf8;
+  }
+  .c-aleatorio + span,
+  .capturados-contador {
+    font-size: 12px;
+    margin: 8px 0;
+  }
 }

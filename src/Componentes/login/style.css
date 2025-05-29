@@ -10,6 +10,41 @@
   text-align: center;
 }
 
+/* Responsive móvil */
+@media (max-width: 600px) {
+  .login-container {
+    max-width: 90%;
+    margin: 30px auto;
+    padding: 16px 20px;
+  }
+
+  .login-container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 18px;
+  }
+
+  .login-container form {
+    gap: 14px;
+  }
+
+  .login-container input[type="email"],
+  .login-container input[type="password"] {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  .login-container button[type="submit"] {
+    padding: 12px 0;
+    font-size: 15px;
+  }
+
+  .login-container .secondary-button {
+    margin-top: 14px;
+    padding: 8px 20px;
+    font-size: 14px;
+  }
+}
+
 .login-container h2 {
   margin-bottom: 24px;
   color: #38bdf8;

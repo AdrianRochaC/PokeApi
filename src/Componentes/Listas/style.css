@@ -60,6 +60,7 @@ body {
 .c-lista-pokemon p {
   margin: 5px 0;
   font-weight: 500;
+  font-size: 14px;
 }
 
 /* Imagen del Pokémon */
@@ -75,13 +76,34 @@ body {
   .c-buscador {
     width: 90%;
     font-size: 14px;
+    padding: 8px 16px;
+    margin: 20px auto 16px auto;
   }
 
   .c-lista {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .c-lista-pokemon {
+    padding: 8px;
+    border-radius: 12px;
+    box-shadow: 0 0 8px rgba(0, 128, 255, 0.08);
+  }
+
+  .c-lista-pokemon:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 12px rgba(0, 128, 255, 0.25);
+  }
+
+  .c-lista-pokemon p {
+    font-size: 12px;
+    margin: 4px 0;
   }
 
   .c-lista-pokemon img {
     height: 60px;
+    margin: 6px 0;
   }
 }
